@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Form = ({number1, setNumber1, number2, setNumber2,}) => {
+const Form = ({numbers, setNumbers}) => {
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setNumber1(e.target.value);
-  // }
+  const handleInputChange1 = (e) => {
+    setNumbers((prev) => ({ ...prev, number1: Number(e.target.value) }));
+  };
+
+  const handleInputChange2 = (e) => {
+    setNumbers((prev) => ({ ...prev, number2: Number(e.target.value) }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log('numbers', numbers);
+  }
 
   return ( 
   <div className="form">
     <label>Enter first number</label>
-    <input type="number" />
+    <input type="number" onChange={handleInputChange1}/>
     <label>Enter second number</label>
-    <input type="number" />
-    <button type="submit">Confirm</button>
+    <input type="number" onChange={handleInputChange2}/>
+    <button type="submit" onClick={handleSubmit}>Confirm</button>
   </div> );
 }
  
