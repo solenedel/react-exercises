@@ -4,7 +4,7 @@ const Form = ({numbers, setNumbers, minutes, setMinutes}) => {
 
   const handleInputChange1 = (e) => {
     setNumbers((prev) => ({ ...prev, number1: Number(e.target.value) }));
-    setMinutes((prev) => Number(e.target.value)); // set starting minutes
+    setMinutes(Number(e.target.value)); // set starting minutes
   };
 
   const handleInputChange2 = (e) => {
@@ -13,6 +13,7 @@ const Form = ({numbers, setNumbers, minutes, setMinutes}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
 
     console.log('numbers', numbers);
     console.log('minutes', minutes);
