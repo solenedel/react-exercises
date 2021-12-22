@@ -4,7 +4,7 @@ import { GlobalStyles } from "./components/styled/GlobalStyles.style";
 import Timer from "./components/Timer";
 
 
-// unique local storage key to store the todos
+// unique local storage key 
 // const LOCAL_STORAGE_KEY_NUMBERS = 'numbersFromUser';
 
 function App() {
