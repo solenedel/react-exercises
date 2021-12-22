@@ -17,6 +17,20 @@ function App() {
    const [time, setTime] = useState(0);
    const [timerOn, setTimerOn] = useState(false);
 
+   useEffect(() => {
+     let interval = null; // declare the interval
+
+     if (timerOn) {
+      interval = setInterval(() => {
+        setTime(prevTime => prevTime + 1000); // add one second to the time
+      }, 1000);
+      
+     } else {
+        clearInterval(interval); // stop the timer
+     }
+   }, [timerOn]);
+
+   /*
 
    // persist numbers state on reload
    useEffect(() => {
@@ -28,6 +42,8 @@ function App() {
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY_NUMBERS, JSON.stringify(numbers));
   }, [numbers]);
+
+  */
 
   return (
     <div className="App">
