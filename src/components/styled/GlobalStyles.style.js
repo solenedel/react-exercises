@@ -37,4 +37,20 @@ export const GlobalStyles = createGlobalStyle`
         color: #AFFDFF;
       }
     }
+
+    .timer {
+      margin: 60px 20% 0 20%;
+      padding: 40px;
+      border: solid #D5FFAF 4px;
+      border-radius: 8px;
+      text-align: center;
+
+      & span, button {
+        font-size: 50px;
+      }
+      
+      .buttons {
+        margin-top: 30px;
+      }
+    }
 `;
