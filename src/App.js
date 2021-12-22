@@ -62,7 +62,10 @@ function App() {
           <li>Number 2: {numbers.number2}</li>
         </ul>
       </div>
-      <div>time: {time}</div>
+      <div>
+        <span id="minutes">{('0' + Math.floor((time / 60000) % 60)).slice(-2)} : </span>
+        <span id="seconds">{('0' + Math.floor((time / 1000) % 60)).slice(-2)}</span> 
+      </div>
       <div className="buttons">
         <button onClick={() => setTimerOn(true)}>Start</button>
         <button onClick={() => setTimerOn(false)}>Stop</button>
