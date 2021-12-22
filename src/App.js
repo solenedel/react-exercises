@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Form from "./components/Form";
 import { GlobalStyles } from "./components/styled/GlobalStyles.style";
+import Timer from "./components/Timer";
 
 // unique local storage key to store the todos
 const LOCAL_STORAGE_KEY_NUMBERS = 'numbersFromUser';
@@ -37,9 +38,8 @@ function App() {
           <li>Number 1: {numbers.number1}</li>
           <li>Number 2: {numbers.number2}</li>
         </ul>
-        
-        
       </div>
+      <Timer />
     </div>
   );
 }

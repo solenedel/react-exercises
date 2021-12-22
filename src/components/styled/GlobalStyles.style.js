@@ -31,8 +31,6 @@ export const GlobalStyles = createGlobalStyle`
     .chosen-numbers {
       margin-top: 50px;
       text-align: center;
-      border: solid blue 3px;
-      
 
       & li {
         list-style-type: none;
