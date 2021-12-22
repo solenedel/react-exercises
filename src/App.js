@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Form from "./components/Form";
 import { GlobalStyles } from "./components/styled/GlobalStyles.style";
-import Timer from "./components/Timer";
+// import Timer from "./components/Timer";
 
 // unique local storage key to store the todos
 const LOCAL_STORAGE_KEY_NUMBERS = 'numbersFromUser';
@@ -44,8 +44,12 @@ function App() {
         </ul>
       </div>
       <div>time: {time}</div>
-      <Timer
-         />
+      <div className="buttons">
+        <button onClick={() => setTimerOn(true)}>Start</button>
+        <button onClick={() => setTimerOn(false)}>Stop</button>
+        <button onClick={() => setTimerOn(true)}>Resume</button>
+        <button onClick={() => setTime(0)}>Reset</button>
+      </div>
     </div>
   );
 }
