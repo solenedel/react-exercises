@@ -31,10 +31,14 @@ function App() {
         numbers={numbers}
         setNumbers={setNumbers}
       />
-      <div>
-        Number 1: {numbers.number1}
-        <br />
-        Number 2: {numbers.number2}
+      <div className="chosen-numbers">
+        <h3>Numbers selected by user:</h3>
+        <ul>
+          <li>Number 1: {numbers.number1}</li>
+          <li>Number 2: {numbers.number2}</li>
+        </ul>
+        
+        
       </div>
     </div>
   );
