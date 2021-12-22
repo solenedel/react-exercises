@@ -4,7 +4,7 @@ import { GlobalStyles } from "./components/styled/GlobalStyles.style";
 // import Timer from "./components/Timer";
 
 // unique local storage key to store the todos
-const LOCAL_STORAGE_KEY_NUMBERS = 'numbersFromUser';
+// const LOCAL_STORAGE_KEY_NUMBERS = 'numbersFromUser';
 
 function App() {
 
@@ -24,10 +24,13 @@ function App() {
       interval = setInterval(() => {
         setTime(prevTime => prevTime + 1000); // add one second to the time
       }, 1000);
-      
+
      } else {
         clearInterval(interval); // stop the timer
      }
+
+     // return cleanup function to avoid memory leaks when component unmounts
+     return () => clearInterval(interval); 
    }, [timerOn]);
 
    /*
@@ -64,7 +67,10 @@ function App() {
         <button onClick={() => setTimerOn(true)}>Start</button>
         <button onClick={() => setTimerOn(false)}>Stop</button>
         <button onClick={() => setTimerOn(true)}>Resume</button>
-        <button onClick={() => setTime(0)}>Reset</button>
+        <button onClick={() => {
+          setTimerOn(false);
+          setTime(0);
+        }}>Reset</button>
       </div>
     </div>
   );
