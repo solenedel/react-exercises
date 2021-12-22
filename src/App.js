@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Form from "./components/Form";
+import { GlobalStyles } from "./components/styled/GlobalStyles.style";
 
 // unique local storage key to store the todos
 const LOCAL_STORAGE_KEY_NUMBERS = 'numbersFromUser';
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <div className="App">
+      <GlobalStyles />
       <Form 
         numbers={numbers}
         setNumbers={setNumbers}
