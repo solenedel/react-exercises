@@ -1,9 +1,11 @@
 import React from "react";
 
-const Timer = () => {
+const Timer = ({ minutes, setMinutes, seconds, setSeconds}) => {
   return ( 
     <div className="timer">
-      Timer
+      <h3>timer</h3>
+      <div>{minutes} : {seconds}</div>
+      <button>Start</button>
     </div>
    );
 }

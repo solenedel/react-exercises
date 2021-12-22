@@ -14,6 +14,9 @@ function App() {
      number2: 0
    });
 
+   const [minutes, setMinutes] = useState(0);
+   const [seconds, setSeconds] = useState(0);
+
    // persist numbers state on reload
    useEffect(() => {
      const storageNumbers = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NUMBERS));
@@ -31,6 +34,8 @@ function App() {
       <Form 
         numbers={numbers}
         setNumbers={setNumbers}
+        minutes={minutes}
+        setMinutes={setMinutes}
       />
       <div className="chosen-numbers">
         <h3>Numbers selected by user:</h3>
@@ -39,7 +44,12 @@ function App() {
           <li>Number 2: {numbers.number2}</li>
         </ul>
       </div>
-      <Timer />
+      <Timer
+        minutes={minutes}
+        setMinutes={setMinutes}
+        seconds={seconds}
+        setSeconds={setSeconds}
+         />
     </div>
   );
 }
