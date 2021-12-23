@@ -18,12 +18,13 @@ function App() {
    const [time, setTime] = useState(0);
    const [timerOn, setTimerOn] = useState(false);
 
+
    useEffect(() => {
      let interval = null; // declare the interval
 
      if (timerOn) {
       interval = setInterval(() => {
-        setTime(prevTime => prevTime + 1000); // add one second to the time
+        setTime(prevTime => prevTime - 1000); // add one second to the time
       }, 1000);
 
      } else {
@@ -41,6 +42,8 @@ function App() {
       <Form 
         numbers={numbers}
         setNumbers={setNumbers}
+        time={time}
+        setTime={setTime}
       />
       <div className="chosen-numbers">
         <h3>Numbers selected by user:</h3>
@@ -50,7 +53,7 @@ function App() {
         </ul>
       </div>
       <div>
-      <Timer time={time} setTime={setTime} timerOn={timerOn} setTimerOn={setTimerOn} />
+      <Timer time={time} setTime={setTime} timerOn={timerOn} setTimerOn={setTimerOn} numbers={numbers} />
       </div>
     </div>
   );
