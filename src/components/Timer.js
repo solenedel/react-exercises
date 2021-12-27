@@ -9,13 +9,13 @@ const Timer = ({ time, setTime, timerOn, setTimerOn, numbers }) => {
 
       <div className="buttons">
         
-        {!timerOn && time === 0 && (
+        {!timerOn && time === (numbers.number1 * 1000 * 60) && (
           <button onClick={() => setTimerOn(true)}>Start</button>)}
         {timerOn && (<button onClick={() => setTimerOn(false)}>Stop</button>)}  
-        {!timerOn && time !== 0 && (
+        {!timerOn && time !== (numbers.number1 * 1000 * 60) && (
           <button onClick={() => setTimerOn(true)}>Resume</button>
         )}
-        {!timerOn && time > 0 && ( 
+        {!timerOn && time !== (numbers.number1 * 1000 * 60) && ( 
            <button onClick={() => {
           setTimerOn(false);
           setTime(0);

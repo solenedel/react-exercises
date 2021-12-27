@@ -12,6 +12,7 @@ const Form = ({numbers, setNumbers, setTime, time}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setTime(numbers.number1 * 1000 * 60);
   }
 
   return ( 

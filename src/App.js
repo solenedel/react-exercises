@@ -24,7 +24,7 @@ function App() {
 
      if (timerOn) {
       interval = setInterval(() => {
-        setTime(prevTime => prevTime - 1000); // add one second to the time
+        setTime(prevTime => prevTime - 1000); 
       }, 1000);
 
      } else {
