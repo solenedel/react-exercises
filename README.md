@@ -1,5 +1,20 @@
 # React exercises
 
+### TO DO
+- need another state to keep track of the input entered by user (different from numbers state)
+- add a clear timer button. 
+
+all states: 
+
+- input value by user
+- numbers (once clicked confirm button)
+- time
+- cycles (entered by user)
+
+
+
+
+
 ## Exercise 1: pomodoro timer
 
 The user enters their timer settings theough a form. This includes:

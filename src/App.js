@@ -24,8 +24,11 @@ function App() {
 
      if (timerOn) {
       interval = setInterval(() => {
+
         setTime(prevTime => prevTime - 1000); 
+
       }, 1000);
+
 
      } else {
         clearInterval(interval); // stop the timer
@@ -34,6 +37,20 @@ function App() {
      // return cleanup function to avoid memory leaks when component unmounts
      return () => clearInterval(interval); 
    }, [timerOn]);
+
+
+   // keep track of time value 
+   useEffect(() => {
+    
+    // stop the timer if time is zero or less
+    if (time <= 0) {
+          setTimerOn(false);
+          setTime(0);
+          // loop stuff- update state variable for loop 
+          // set time to be the number entered by the user
+        }
+
+   }, [time]);
 
 
   return (
