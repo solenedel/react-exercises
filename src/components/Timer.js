@@ -18,7 +18,7 @@ const Timer = ({ time, setTime, timerOn, setTimerOn, numbers }) => {
         {!timerOn && time !== (numbers.number1 * 1000 * 60) && ( 
            <button onClick={() => {
           setTimerOn(false);
-          setTime(0);
+          setTime(numbers.number1 * 1000 * 60);
         }}>Reset</button>
         )}
        
